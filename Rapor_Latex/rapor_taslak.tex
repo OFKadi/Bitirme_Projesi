@@ -5,6 +5,7 @@
 \usepackage{amsmath}
 \usepackage{multirow}
 
+\newcommand{\vect}[1]{\mathbf{#1}}
 \usepackage[inner=2.5cm, % Inner margin
 			outer=3cm, % Outer margin
 			bindingoffset=0.5cm, % Binding offset
@@ -28,7 +29,7 @@
 \textsc{\large Bitirme Projesi}\\[0.5cm]% Minor heading such as course
 
 \HRule \\[0.4cm]
-{ \huge \bfseries KONU} % Title of your document
+{ \huge \bfseries HARMONİK TUZAK İÇİNDE İKİ PARÇACIK SAÇILIMI} % Title of your document
 \HRule \\[1.5cm]
 
 \begin{minipage}{0.4\textwidth}
@@ -77,6 +78,73 @@ Doc. Dr. Ahmet Levent Subaşı % Supervisor's Name
 \newpage
 \pagenumbering{arabic}
 \setcounter{page}{1}
+
+\section{Giriş}
+\subsection{İki Parçacıklı Sistem}
+
+İki parçacıklı bir sistemin hamiltonyanı söyle yazılabilir.
+
+\begin{equation} \label{h}
+H = \frac{\vect{p_1^2}}{2m_1}+\frac{\vect{p_2^2}}{2m_2}+V(\vect{r_1}-\vect{r_2})
+\end{equation}
+
+İki parçacık arasındaki potansiyel sadece parçacıklar arası mesafeye ise hamitonyan göreli koordinatlar ve kütle merkezi koordinatları kullanılarak ikiye ayrıştırılabilir.
+
+\begin{align}
+\label{rel}
+\vect{r}&=\vect{r_1}-\vect{r_2} &\vect{k}&=\frac{m_2\vect{p_1}-m_1\vect{p_2}}{m_1+m_2} & \mu&=\frac{m_1m_2}{m_1+m_2}\\
+\label{cm}
+\vect{R}&=\frac{m_1\vect{r_1}+m_2\vect{r_2}}{m_1+m_2}&\vect{P}&=\vect{p_1}+\vect{p_2}&M&=m_1+m_2
+\end{align}
+ 
+Göreli koordinatları (\ref{rel}) tanımlarken kütlme merkezi koordinatlarını (\ref{cm}) tanımlanmaktadır. Bu koordinat dönüşümleri latında iki parçacıklı bir sistemin hamiltonyani şöyle yazılabilir:
+
+\begin{equation}\label{h2}
+\begin{split}
+H&=\frac{\vect{P^2}}{2M}+\Bigg[\frac{\vect{k^2}}{2\mu}+V(\vect{r})\Bigg]\\
+&\equiv H_{cm}+H_{rel}
+\end{split}
+\end{equation}
+
+Schrödinger denklemini bu hamiltonyani kullanarak çözmek istersek; değikenlere ayırma yöntemiyle  $\Psi$'yi değikenlerine yazabiliriz.
+
+\begin{equation} \label{psi}
+\Psi(\vect{R},\vect{r})=\psi(\vect{R})\phi(\vect{r})
+\end{equation}
+
+$\psi$ kütle merkesinin hareketinin çözümü iken $\phi$ göreli hareketin çözümüdür.
+
+\subsection{S-dalga Limiti}
+
+S-dalga limtinde bir potansiyel kuyudan saçılan sürekli bir düzlem dalga (Şekil \ref{fig:swave}) ile durağan durumlar elde edilebilir. Böylece $|\Psi|^2$ zamandan bağımsız olur. Bu durumda $H_{cm}$ için zamadan bağımsız Schrödinger denleminin çözümü bize
+
+\begin{equation} \label{hcm}
+\psi(\vect{R})=e^{i\vect{P}\cdot \vect{R}}
+\end{equation}
+
+verir. Bizim asıl gilgileceğim ve ilgi çekici kısım zamandan bağımsız Schrödinger denmenin $H_{rel}$'in için çözümüdür. 
+
+\begin{figure}[h!]
+ 	\centering
+	\shorthandoff{=}
+      \includegraphics[width=0.7\textwidth]{s-wave.png}
+	\caption{\label{fig:swave}Küresel bir potansiyel saçılma}
+\end{figure}
+
+
+\begin{equation} \label{hrel}
+\phi(r)=e^{ikz}+f(k)\frac{e^{ikr}}{r}
+\end{equation}
+
+(\ref{hrel})'de ilk terim gelen düzlem dalgayı temsil ederken ikinci terim saçılan galgayı temsil etmektedir. $f(k)$ ise saçılma genliği olarak tanımlanır.
+
+
+
+% i\hbar \frac{\partial}{\partial t}\Psi(\mathbf{r},t) = \hat H \Psi(\mathbf{r},t)
+
+
+%----------------------------------------------------------------------------------------------
+\newpage
 \section{Giriş}
 
 \subsection{Satır İçerisinde Denklem}
