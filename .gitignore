@@ -1,2 +1,9 @@
 Jupyter_Notebooks/.ipynb_checkpoints
 *.gz
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.toc
